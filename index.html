@@ -1,0 +1,1220 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Revival Fire Philippines | Complete Slideshows</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+
+<style>
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body{
+    font-family:'Montserrat',sans-serif;
+    background:#0b1120;
+    color:white;
+    line-height:1.6;
+}
+
+/* Theme Colors */
+:root {
+    --revival-blue: #38bdf8;
+    --revival-blue-dark: #0ea5e9;
+    --revival-blue-light: #7dd3fc;
+    --fire-red: #ff4500;
+    --fire-red-dark: #dc2626;
+    --fire-red-light: #ff6600;
+    --ph-blue: #0038a8;
+    --ph-red: #ce1126;
+    --ph-yellow: #fcd116;
+}
+
+header{
+    position:fixed;
+    width:100%;
+    top:0;
+    left:0;
+    z-index:1000;
+    background:rgba(0,0,0,.85);
+    backdrop-filter:blur(10px);
+    transition: all 0.3s;
+}
+
+header.scrolled {
+    background: rgba(0,0,0,0.95);
+    padding: 5px 0;
+}
+
+.nav{
+    max-width:1200px;
+    margin:auto;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:18px 20px;
+}
+
+.logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+}
+
+.logo img{
+    width:55px;
+}
+
+.logo h2{
+    font-size:20px;
+}
+
+.logo h2 span.revival-logo { color: var(--revival-blue); }
+.logo h2 span.fire-logo {
+    color: var(--fire-red);
+    text-shadow: 0 0 5px var(--fire-red);
+}
+.logo h2 span.ph-logo {
+    background: linear-gradient(135deg, var(--ph-blue) 0%, var(--ph-blue) 33%, var(--ph-red) 33%, var(--ph-red) 66%, var(--ph-yellow) 66%, var(--ph-yellow) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+nav ul{
+    list-style:none;
+    display:flex;
+    gap:25px;
+}
+
+nav a{
+    color:white;
+    text-decoration:none;
+    font-weight:600;
+    transition: color 0.3s;
+    cursor: pointer;
+}
+
+nav a:hover{
+    color:var(--revival-blue);
+}
+
+/* Full screen sections - SLIDESHOW VERSION */
+.fullscreen-section {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 100px 20px;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Slideshow Background Container */
+.slideshow-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 0;
+}
+
+.slide-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0;
+    transition: opacity 1s ease-in-out;
+    z-index: 1;
+}
+
+.slide-bg.active-slide {
+    opacity: 1;
+    z-index: 2;
+}
+
+.slide-bg::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    z-index: 1;
+}
+
+/* Hero Content */
+.hero-content {
+    position: relative;
+    z-index: 10;
+    max-width: 900px;
+    margin: 0 auto;
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s ease;
+}
+
+.hero-content.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* HERO 1 - text LEFT */
+#home .hero-content {
+    text-align: left;
+    margin-left: 8%;
+    margin-right: auto;
+    max-width: 550px;
+}
+
+#home .hero-content p {
+    margin-left: 0;
+}
+
+/* HERO 2 - text CENTER with top spacing */
+#hero2 {
+    align-items: flex-start;
+    justify-content: center;
+}
+
+#hero2 .hero-content {
+    margin-top: 80px;
+    text-align: center;
+}
+
+#hero2 .hero-content .welcome-text {
+    font-size: 28px;
+    margin-bottom: 80px;
+    display: block;
+    letter-spacing: 4px;
+    font-weight: 700;
+    color: white;
+}
+
+/* HERO 3 - text CENTER middle */
+#hero3 {
+    align-items: center;
+    justify-content: center;
+}
+
+#hero3 .hero-content {
+    margin-top: 0;
+    text-align: center;
+}
+
+.hero-content h1 {
+    font-size: 65px;
+    margin-bottom: 25px;
+    text-transform: uppercase;
+    line-height: 1.2;
+    font-weight: 900;
+    letter-spacing: 2px;
+    text-shadow: 3px 3px 8px rgba(0,0,0,0.5);
+}
+
+.hero-content h1 .welcome-text {
+    font-size: 28px;
+    display: block;
+    letter-spacing: 4px;
+    margin-bottom: 10px;
+    font-weight: 700;
+    color: white;
+}
+
+.hero-content h1 .main-title {
+    display: block;
+    font-size: 65px;
+    margin-top: 10px;
+}
+
+.hero-content h1 .word-revival {
+    display: inline-block;
+    color: var(--revival-blue);
+    text-shadow: 0 0 10px var(--revival-blue);
+    animation: revivalGlow 3s ease-in-out infinite;
+}
+
+@keyframes revivalGlow {
+    0%, 100% { text-shadow: 0 0 5px var(--revival-blue); }
+    50% { text-shadow: 0 0 20px var(--revival-blue); }
+}
+
+.hero-content h1 .word-fire {
+    display: inline-block;
+    color: var(--fire-red);
+    text-shadow: 0 0 10px var(--fire-red);
+    animation: fireFlicker 0.8s ease-in-out infinite alternate;
+}
+
+@keyframes fireFlicker {
+    0% { text-shadow: 0 0 5px var(--fire-red); color: var(--fire-red); }
+    50% { text-shadow: 0 0 15px #ff6600; color: #ff6600; }
+    100% { text-shadow: 0 0 8px var(--fire-red-dark); color: var(--fire-red-dark); }
+}
+
+.hero-content h1 .word-ph {
+    display: inline-block;
+    background: linear-gradient(135deg, var(--ph-blue) 0%, var(--ph-blue) 33%, var(--ph-red) 33%, var(--ph-red) 66%, var(--ph-yellow) 66%, var(--ph-yellow) 100%);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.hero-content p {
+    font-size: 18px;
+    margin-bottom: 35px;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    line-height: 1.8;
+    font-weight: 600;
+    background: rgba(0,0,0,0.3);
+    padding: 15px 25px;
+    border-radius: 15px;
+    backdrop-filter: blur(3px);
+}
+
+/* Buttons */
+.btn{
+    display:inline-block;
+    background: var(--revival-blue);
+    color:white;
+    text-decoration:none;
+    padding:15px 35px;
+    border-radius:50px;
+    font-weight:bold;
+    transition: all 0.3s;
+    font-size: 16px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+}
+
+.btn:hover{
+    background: var(--revival-blue-dark);
+    transform: scale(1.05);
+}
+
+.btn-outline{
+    background:transparent;
+    border:2px solid var(--revival-blue);
+    color:var(--revival-blue);
+}
+
+.btn-outline:hover{
+    background:var(--revival-blue);
+    color:white;
+}
+
+.facebook-link {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    background: #1877f2;
+    color: white;
+    text-decoration: none;
+    padding: 12px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    transition: all 0.3s;
+    margin-top: 15px;
+}
+
+.facebook-link:hover {
+    background: #0d6efd;
+    transform: scale(1.05);
+}
+
+/* Scroll Down Indicator - LEFT SIDE BOTTOM */
+.scroll-down-indicator {
+    position: fixed;
+    bottom: 30px;
+    left: 30px;
+    text-align: center;
+    cursor: pointer;
+    z-index: 999;
+    background: rgba(0,0,0,0.6);
+    padding: 12px 20px;
+    border-radius: 40px;
+    backdrop-filter: blur(5px);
+    transition: opacity 0.3s;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 5px;
+}
+
+.scroll-down-indicator.hide {
+    opacity: 0;
+    visibility: hidden;
+}
+
+.scroll-down-indicator span {
+    font-size: 11px;
+    letter-spacing: 2px;
+    font-weight: 600;
+}
+
+.scroll-down-indicator i {
+    font-size: 16px;
+    animation: simpleBounce 1.2s ease-in-out infinite;
+}
+
+@keyframes simpleBounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(6px); }
+}
+
+/* Progress Bar */
+.progress-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--revival-blue), var(--fire-red), var(--ph-yellow));
+    z-index: 1001;
+    transition: width 0.3s;
+}
+
+/* Scroll to Top Button */
+.scroll-top {
+    position: fixed;
+    bottom: 100px;
+    right: 30px;
+    width: 50px;
+    height: 50px;
+    background: var(--revival-blue);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 998;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    border: none;
+    font-size: 20px;
+}
+
+.scroll-top.show {
+    opacity: 1;
+    visibility: visible;
+}
+
+.scroll-top:hover {
+    background: var(--fire-red);
+    transform: translateY(-5px);
+}
+
+/* Floating Donate Button */
+.floating-donate {
+    position: fixed;
+    bottom: 30px;
+    right: 30px;
+    z-index: 999;
+}
+
+.floating-donate a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    background: #ff69b4;
+    color: white;
+    text-decoration: none;
+    padding: 15px 25px;
+    border-radius: 50px;
+    font-weight: bold;
+    box-shadow: 0 4px 20px rgba(255, 105, 180, 0.5);
+    transition: all 0.3s;
+}
+
+.floating-donate a:hover {
+    background: #ff1493;
+    transform: scale(1.08);
+}
+
+.floating-donate a i {
+    font-size: 20px;
+    animation: heartBeat 0.8s ease-in-out infinite;
+}
+
+@keyframes heartBeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.3); }
+    35% { transform: scale(1.1); }
+    45% { transform: scale(1.2); }
+}
+
+/* Other Sections */
+section{
+    padding: 80px 20px;
+    position: relative;
+}
+
+.container{
+    max-width:1200px;
+    margin:auto;
+}
+
+.section-title {
+    text-align: center;
+    font-size: 42px;
+    margin-bottom: 60px;
+    position: relative;
+    font-weight: 800;
+}
+
+.section-title span.revival { color: var(--revival-blue); }
+.section-title span.fire { color: var(--fire-red); }
+.section-title span.ph {
+    background: linear-gradient(135deg, var(--ph-blue), var(--ph-red), var(--ph-yellow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.section-title:after{
+    content: '';
+    display: block;
+    width: 60px;
+    height: 4px;
+    background: linear-gradient(90deg, var(--revival-blue), var(--fire-red), var(--ph-yellow));
+    margin: 15px auto 0;
+    border-radius: 2px;
+}
+
+.about{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:40px;
+    align-items:center;
+}
+
+/* Small Slideshow in About Section */
+.about-slideshow-container {
+    position: relative;
+    width: 100%;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+}
+
+.about-slide {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+    display: none;
+    transition: opacity 0.5s ease;
+}
+
+.about-slide.active-about {
+    display: block;
+    animation: fadeInAbout 0.8s ease;
+}
+
+@keyframes fadeInAbout {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.about-dots {
+    text-align: center;
+    margin-top: 12px;
+}
+
+.about-dot {
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    margin: 0 5px;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+.about-dot.active-about-dot {
+    background: var(--revival-blue);
+    transform: scale(1.2);
+}
+
+.mission-vision {
+    background: #16213e;
+    border-radius: 20px;
+    padding: 40px;
+    margin-top: 40px;
+}
+
+.mv-box h3 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.mv-box h3 .revival-text { color: var(--revival-blue); }
+.mv-box h3 .fire-text { color: var(--fire-red); }
+
+.mv-box ul {
+    padding-left: 20px;
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(280px,1fr));
+    gap:25px;
+}
+
+.card{
+    background:#16213e;
+    border-radius:15px;
+    overflow:hidden;
+    transition: transform 0.3s;
+}
+
+.card:hover { transform: translateY(-10px); }
+.card img { width:100%; height:220px; object-fit:cover; }
+.card-content { padding:25px; }
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.video-card {
+    background: #16213e;
+    border-radius: 15px;
+    overflow: hidden;
+    transition: transform 0.3s;
+}
+
+.video-card:hover { transform: translateY(-5px); }
+
+.video-wrapper {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    cursor: pointer;
+}
+
+.video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.play-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0,0,0,0.6);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s;
+}
+
+.video-card:hover .play-overlay { opacity: 1; }
+.play-overlay i { font-size: 48px; color: #ff0000; }
+
+.video-info { padding: 15px 20px; }
+.watch-btn { margin-top: 10px; display: inline-block; padding: 8px 20px; background: #ff0000; border-radius: 50px; color: white; text-decoration: none; }
+
+.gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 20px;
+}
+
+.gallery-item {
+    position: relative;
+    overflow: hidden;
+    border-radius: 15px;
+    cursor: pointer;
+}
+
+.gallery-item img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover img { transform: scale(1.1); }
+
+.gallery-overlay {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(transparent, rgba(0,0,0,0.8));
+    padding: 20px;
+    transform: translateY(100%);
+    transition: transform 0.3s;
+}
+
+.gallery-item:hover .gallery-overlay { transform: translateY(0); }
+
+/* GIVE SECTION - FULL RESTORED */
+.give-section-enhanced {
+    background: linear-gradient(135deg, #16213e 0%, #0f0f1a 100%);
+    border-radius: 30px;
+    padding: 60px 40px;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.give-section-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 5px;
+    background: linear-gradient(90deg, var(--revival-blue), var(--fire-red), var(--ph-yellow));
+    animation: gradientMove 3s infinite;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+.give-title {
+    font-size: 48px;
+    font-weight: 800;
+    margin-bottom: 20px;
+}
+
+.give-title span.revival { color: var(--revival-blue); }
+.give-title span.fire { color: var(--fire-red); }
+.give-title span.ph {
+    background: linear-gradient(135deg, var(--ph-blue), var(--ph-red), var(--ph-yellow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+.give-subtitle {
+    font-size: 18px;
+    margin-bottom: 40px;
+    color: #ccc;
+}
+
+.give-options-enhanced {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    gap: 30px;
+    margin-top: 20px;
+}
+
+.give-card-enhanced {
+    background: rgba(255,255,255,0.08);
+    padding: 35px 25px;
+    border-radius: 20px;
+    transition: all 0.3s;
+    border: 1px solid rgba(255,255,255,0.1);
+}
+
+.give-card-enhanced:hover {
+    transform: translateY(-10px);
+    background: rgba(255,255,255,0.12);
+    border-color: var(--revival-blue);
+}
+
+.payment-logos {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    margin-bottom: 20px;
+    flex-wrap: wrap;
+}
+
+.payment-logo {
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-weight: bold;
+    font-size: 12px;
+}
+
+.payment-logo.gcash { background: #007c36; color: white; }
+.payment-logo.paymaya { background: #1a2c3e; color: white; }
+.payment-logo.paypal { background: #003087; color: white; }
+.payment-logo.venmo { background: #3D95CE; color: white; }
+
+.gcash-number {
+    font-size: 22px;
+    font-weight: 800;
+    color: var(--revival-blue);
+    letter-spacing: 2px;
+    margin: 10px 0;
+}
+
+.give-card-enhanced i {
+    font-size: 56px;
+    color: var(--revival-blue);
+    margin-bottom: 20px;
+}
+
+.give-card-enhanced h3 {
+    font-size: 24px;
+    margin-bottom: 15px;
+}
+
+.give-amount-buttons {
+    display: flex;
+    gap: 10px;
+    justify-content: center;
+    flex-wrap: wrap;
+    margin: 20px 0;
+}
+
+.amount-btn {
+    background: rgba(255,255,255,0.1);
+    border: 1px solid rgba(255,255,255,0.2);
+    padding: 8px 16px;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-weight: bold;
+}
+
+.amount-btn:hover, .amount-btn.active {
+    background: var(--revival-blue);
+    border-color: var(--revival-blue);
+}
+
+.give-impact {
+    margin-top: 50px;
+    padding-top: 40px;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    display: flex;
+    justify-content: center;
+    gap: 40px;
+    flex-wrap: wrap;
+}
+
+.impact-number {
+    font-size: 36px;
+    font-weight: 800;
+    color: var(--revival-blue);
+}
+
+.impact-label {
+    font-size: 14px;
+    color: #aaa;
+}
+
+/* CONTACT SECTION */
+.contact-info {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+.contact-card {
+    background: #16213e;
+    padding: 25px;
+    border-radius: 15px;
+    text-align: center;
+}
+
+.contact-card i {
+    font-size: 36px;
+    color: var(--revival-blue);
+    margin-bottom: 15px;
+}
+
+form {
+    max-width: 700px;
+    margin: auto;
+}
+
+input, textarea {
+    width: 100%;
+    padding: 15px;
+    margin-bottom: 15px;
+    border: none;
+    border-radius: 8px;
+    background: #1e2a3a;
+    color: white;
+    font-family: 'Montserrat', sans-serif;
+}
+
+input:focus, textarea:focus {
+    outline: 2px solid var(--revival-blue);
+}
+
+button {
+    background: var(--revival-blue);
+    color: white;
+    border: none;
+    padding: 15px 35px;
+    border-radius: 50px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: var(--revival-blue-dark);
+    transform: scale(1.05);
+}
+
+footer {
+    background: black;
+    text-align: center;
+    padding: 40px 20px;
+}
+
+footer h3 span.revival { color: var(--revival-blue); }
+footer h3 span.fire { color: var(--fire-red); }
+footer h3 span.ph {
+    background: linear-gradient(135deg, var(--ph-blue), var(--ph-red), var(--ph-yellow));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+@media(max-width:768px){
+    .hero-content h1 { font-size: 40px; }
+    .hero-content h1 .main-title { font-size: 35px; }
+    .hero-content p { font-size: 14px; }
+    .about { grid-template-columns: 1fr; }
+    .about-slide { height: 280px; }
+    .section-title { font-size: 32px; }
+    nav ul { display: none; }
+    .video-grid { grid-template-columns: 1fr; }
+    #home .hero-content { margin-left: 5%; max-width: 90%; }
+    .scroll-down-indicator { left: 20px; bottom: 20px; padding: 8px 16px; }
+    .give-title { font-size: 32px; }
+    .give-section-enhanced { padding: 40px 20px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="progress-bar" id="progressBar"></div>
+
+<header id="header">
+    <div class="nav">
+        <div class="logo">
+            <img src="logo.png" alt="Revival Fire Philippines">
+            <h2><span class="revival-logo">REVIVAL</span> <span class="fire-logo">FIRE</span> <span class="ph-logo">PH</span></h2>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#about">About</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#sermons">Sermons</a></li>
+                <li><a href="#gallery">Media Gallery</a></li>
+                <li><a href="#give">Give</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </div>
+</header>
+
+<!-- Floating Donate Button -->
+<div class="floating-donate">
+    <a href="#give"><i class="fas fa-heart"></i><span>Give Now</span></a>
+</div>
+
+<!-- Scroll to Top Button -->
+<button class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
+
+<!-- Scroll Down Button - LEFT SIDE BOTTOM -->
+<div class="scroll-down-indicator" id="scrollDownBtn">
+    <span>SCROLL</span>
+    <i class="fas fa-chevron-down"></i>
+</div>
+
+<!-- HERO SECTION 1 -->
+<section id="home" class="fullscreen-section">
+    <div class="slideshow-bg" id="slideshow1"></div>
+    <div class="hero-content">
+        <h1><span class="welcome-text">WELCOME TO</span><span class="main-title"><span class="word-revival">REVIVAL</span> <span class="word-fire">FIRE</span> <span class="word-ph">PH</span></span></h1>
+        <p>God has released revival to the world and we are a community of believers who are passionate to see Jesus have His way; coming in power, moving in signs, wonders & miracles.</p>
+        <div style="display: flex; gap: 20px; justify-content: flex-start; flex-wrap: wrap;">
+            <a href="#about" class="btn">Join Us This Sunday</a>
+            <a href="https://www.facebook.com/REVIVALFIREPH" class="btn btn-outline" target="_blank">Watch Live</a>
+        </div>
+        <div style="margin-top: 30px;"><a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Follow us on Facebook</a></div>
+    </div>
+</section>
+
+<!-- HERO SECTION 2 -->
+<section id="hero2" class="fullscreen-section">
+    <div class="slideshow-bg" id="slideshow2"></div>
+    <div class="hero-content">
+        <h1><span class="welcome-text">EXPERIENCE THE</span><span class="main-title">POWER OF REVIVAL</span></h1>
+        <p>Join us as we seek God's presence and witness miracles, healings, and transformed lives. Be part of a community that is hungry for more of God's glory and fire.</p>
+        <a href="#events" class="btn">Join Our Next Event</a>
+        <div style="margin-top: 20px;"><a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Visit our Facebook Page</a></div>
+    </div>
+</section>
+
+<!-- HERO SECTION 3 -->
+<section id="hero3" class="fullscreen-section">
+    <div class="slideshow-bg" id="slideshow3"></div>
+    <div class="hero-content">
+        <h1><span class="welcome-text">BE PART OF THE</span><span class="main-title">MOVEMENT OF GOD</span></h1>
+        <p>Together we are advancing God's Kingdom. Your prayers, support, and presence make a difference. Join us in bringing revival to the Philippines and the nations.</p>
+        <a href="#give" class="btn">Support the Mission →</a>
+        <div style="margin-top: 20px;"><a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Connect on Facebook</a></div>
+    </div>
+</section>
+
+<!-- ABOUT SECTION with SMALL SLIDESHOW -->
+<section id="about">
+<div class="container">
+<h2 class="section-title">About <span class="revival">REVIVAL</span> <span class="fire">FIRE</span> <span class="ph">PH</span></h2>
+<div class="about">
+<div class="about-slideshow-container">
+    <img class="about-slide active-about" src="revival1.jpg" alt="Revival Fire Church" onerror="this.src='https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=600'">
+    <img class="about-slide" src="revival2.jpg" alt="Worship Service" onerror="this.src='https://images.unsplash.com/photo-1515169067868-5387ec356754?w=600'">
+    <img class="about-slide" src="revival3.jpg" alt="Prayer Meeting" onerror="this.src='https://images.unsplash.com/photo-1507692049790-de58290a4334?w=600'">
+    <img class="about-slide" src="revival4.jpg" alt="Congregation" onerror="this.src='https://images.unsplash.com/photo-1464375117522-1311dd6a1d58?w=600'">
+    <img class="about-slide" src="revival5.jpg" alt="Church Event" onerror="this.src='https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?w=600'">
+    <div class="about-dots"></div>
+</div>
+<div>
+<h3 style="font-size:32px;margin-bottom:20px;">🔥 Experience God's Presence</h3>
+<p>Revival Fire Philippines is a Christ-centered ministry committed to evangelism, discipleship, healing, revival, and community transformation.</p>
+<br>
+<p>Our vision is to see lives transformed through the power of Jesus Christ and to equip believers to carry revival wherever they go.</p>
+<a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link" style="margin-top: 20px; display: inline-flex;"><i class="fab fa-facebook-f"></i> Follow us on Facebook</a>
+</div>
+</div>
+<div class="mission-vision">
+    <div class="mv-box"><h3>🔥 <span class="revival-text">VISION</span> <span class="fire-text">STATEMENT</span></h3><p>To see the Philippines and other nations transformed by the Presence and Power of God through a nationwide revival marked by salvation, healing, deliverance, Holy Spirit empowerment, and the manifestation of signs, wonders, and miracles—raising a generation of believers who passionately love and serve Christ the Lord and advance His Kingdom.</p></div>
+    <div class="mv-box"><h3>✝️ <span class="revival-text">MISSION</span> <span class="fire-text">STATEMENT</span></h3><p>Revival Fire Philippines exists to bring revival to the Philippines and other nations by proclaiming the Gospel of Jesus Christ, leading people into a life-changing encounter with God, The Father, The Son And the Holy Spirit, and equipping believers to walk in faith, love, hope, prayer, holiness, consecration and spiritual power.</p><br><p><strong>We are committed to:</strong></p><ul><li>1. Preaching the Good News of Salvation and making disciples of Jesus Christ throughout the nation.</li><li>2. Promoting Revival and Spiritual Awakening through prayer, worship, evangelism, and the ministry of the Holy Spirit.</li><li>3. Ministering Healing and Deliverance to individuals, families, and communities through the power of God.</li><li>4. Equipping and Empowering Believers through biblical training, leadership development, and Holy Spirit impartation.</li><li>5. Demonstrating God's Love and Power through compassionate outreach, signs, wonders, and miracles that glorify Jesus Christ.</li><li>6. Partnering with Churches and Christian Leaders to strengthen the Body of Christ and advance Kingdom purposes throughout the Philippines and beyond.</li><li>7. Raising a Generation of Revivalists who will carry the fire of God, influence society with biblical values, and transform their communities for the glory of God.</li></ul></div>
+</div>
+</div>
+</section>
+
+<!-- EVENTS SECTION -->
+<section id="events"><div class="container"><h2 class="section-title">Upcoming <span class="fire">EVENTS</span></h2><div class="cards">
+<div class="card"><img src="radio-program.jpg" alt="Radio" onerror="this.src='https://images.unsplash.com/photo-1590602847861-f357a9332bbc?w=600'"><div class="card-content"><h3>Daily Radio Program</h3><p>📻 Mon-Sat 2PM-3PM | Sun 1PM-2PM</p></div></div>
+<div class="card"><img src="conference.jpg" alt="Conference" onerror="this.src='https://images.unsplash.com/photo-1528605248644-14dd04022da1?w=600'"><div class="card-content"><h3>Revival Conference 2026</h3><p>🔥 Featuring Prophet Geordavie</p></div></div>
+<div class="card"><img src="sunday-service.jpg" alt="Sunday" onerror="this.src='https://images.unsplash.com/photo-1438032945733-7f60b2d6cc8b?w=600'"><div class="card-content"><h3>Sunday Service</h3><p>📍 Zamora Street, Gogon Centro, Virac, Catanduanes | 2:15 PM</p></div></div>
+</div></div></section>
+
+<!-- SERMONS SECTION -->
+<section id="sermons"><div class="container"><h2 class="section-title">Latest <span class="fire">Sermons</span></h2><div class="video-grid">
+<div class="video-card"><a href="https://www.youtube.com/watch?v=AJ_bNRIY994" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/AJ_bNRIY994/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Overcoming the New Devils</h3><a href="https://www.youtube.com/watch?v=AJ_bNRIY994" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=yf_xZy8rP_0" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/yf_xZy8rP_0/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Impartation Session</h3><a href="https://www.youtube.com/watch?v=yf_xZy8rP_0" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=BxeYB570Y4M" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/BxeYB570Y4M/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Find Yourself / Jitafute</h3><a href="https://www.youtube.com/watch?v=BxeYB570Y4M" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=C3FN9JMPx1c" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/C3FN9JMPx1c/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Strong Faith Against Storms</h3><a href="https://www.youtube.com/watch?v=C3FN9JMPx1c" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+</div></div></section>
+
+<!-- GALLERY SECTION - EXPANDED WITH ALL 15 IMAGES -->
+<section id="gallery"><div class="container"><h2 class="section-title">Media <span class="revival">Gallery</span></h2><div class="gallery">
+<div class="gallery-item"><img src="revival1.jpg"><div class="gallery-overlay"><p>Revival Fire Event 1</p></div></div>
+<div class="gallery-item"><img src="revival2.jpg"><div class="gallery-overlay"><p>Revival Fire Event 2</p></div></div>
+<div class="gallery-item"><img src="revival3.jpg"><div class="gallery-overlay"><p>Revival Fire Event 3</p></div></div>
+<div class="gallery-item"><img src="revival4.jpg"><div class="gallery-overlay"><p>Revival Fire Event 4</p></div></div>
+<div class="gallery-item"><img src="revival5.jpg"><div class="gallery-overlay"><p>Revival Fire Event 5</p></div></div>
+<div class="gallery-item"><img src="revival6.jpg"><div class="gallery-overlay"><p>Revival Fire Event 6</p></div></div>
+<div class="gallery-item"><img src="revival7.jpg"><div class="gallery-overlay"><p>Revival Fire Event 7</p></div></div>
+<div class="gallery-item"><img src="revival8.jpg"><div class="gallery-overlay"><p>Revival Fire Event 8</p></div></div>
+<div class="gallery-item"><img src="revival9.jpg"><div class="gallery-overlay"><p>Revival Fire Event 9</p></div></div>
+<div class="gallery-item"><img src="revival10.jpg"><div class="gallery-overlay"><p>Revival Fire Event 10</p></div></div>
+<div class="gallery-item"><img src="revival11.jpg"><div class="gallery-overlay"><p>Revival Fire Event 11</p></div></div>
+<div class="gallery-item"><img src="revival12.jpg"><div class="gallery-overlay"><p>Revival Fire Event 12</p></div></div>
+<div class="gallery-item"><img src="revival13.jpg"><div class="gallery-overlay"><p>Revival Fire Event 13</p></div></div>
+<div class="gallery-item"><img src="revival14.jpg"><div class="gallery-overlay"><p>Revival Fire Event 14</p></div></div>
+<div class="gallery-item"><img src="revival15.jpg"><div class="gallery-overlay"><p>Revival Fire Event 15</p></div></div>
+</div></div></section>
+
+<!-- GIVE SECTION - FULL RESTORED -->
+<section id="give"><div class="container"><div class="give-section-enhanced"><h2 class="give-title">Support <span class="revival">REVIVAL</span> <span class="fire">FIRE</span> <span class="ph">PH</span></h2><p class="give-subtitle">Your generosity is making an eternal impact in the Philippines and beyond.</p>
+<div class="give-options-enhanced"><div class="give-card-enhanced"><i class="fas fa-credit-card"></i><h3>Online Giving</h3><p>Give securely online using your credit or debit card</p><div class="give-amount-buttons"><span class="amount-btn">₱500</span><span class="amount-btn">₱1,000</span><span class="amount-btn">₱2,500</span><span class="amount-btn">₱5,000</span><span class="amount-btn">Other</span></div><a href="#" class="btn" id="giveOnlineBtn">Give Now</a></div>
+<div class="give-card-enhanced"><div class="payment-logos"><div class="payment-logo gcash">GCash</div><div class="payment-logo paymaya">PayMaya</div><div class="payment-logo paypal">PayPal</div><div class="payment-logo venmo">Venmo</div></div><h3>Mobile & Digital Wallets</h3><p>Send via mobile number or email</p><div style="margin:15px 0;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;"><p style="font-weight:bold;">🇵🇭 GCash / PayMaya (Philippines)</p><div class="gcash-number">0947-977-6401</div><p style="font-size:12px;">Account: Maria C Gray</p></div><div style="margin:15px 0;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;"><p style="font-weight:bold;">🌎 PayPal (International)</p><p style="font-size:16px;color:var(--revival-blue);">paypal@revivalfireph.com</p><p style="font-size:12px;">Send to: Revival Fire Philippines</p></div><div style="margin:15px 0;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;"><p style="font-weight:bold;">🇺🇸 Venmo (US Only)</p><p style="font-size:16px;color:var(--revival-blue);">@RevivalFirePH</p></div></div>
+<div class="give-card-enhanced"><i class="fas fa-globe"></i><h3>Bank & Money Transfer</h3><p>International & Local Transfers</p><div style="margin:15px 0;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;"><p style="font-weight:bold;">🏦 BPI Bank (Philippines)</p><p><strong>Account:</strong> 1234-5678-90</p><p><strong>Name:</strong> Revival Fire Philippines</p></div><div style="margin:15px 0;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;"><p style="font-weight:bold;">📱 Remitly (International)</p><p><strong>Send to:</strong> Maria C Gray</p><p><strong>Country:</strong> Philippines</p><p><strong>Mobile:</strong> 0947-977-6401</p></div><div style="margin:15px 0;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;"><p style="font-weight:bold;">⚡ Western Union</p><p><strong>Name:</strong> Maria C Gray</p><p><strong>Country:</strong> Philippines</p><p><strong>City:</strong> Virac, Catanduanes</p></div></div></div>
+<div class="give-impact"><div><div class="impact-number">500+</div><div class="impact-label">Lives Touched</div></div><div><div class="impact-number">50+</div><div class="impact-label">Families Supported</div></div><div><div class="impact-number">24/7</div><div class="impact-label">Prayer Coverage</div></div></div></div></div></section>
+
+<!-- CONTACT SECTION -->
+<section id="contact"><div class="container"><h2 class="section-title">Contact <span class="revival">Us</span></h2><div class="contact-info"><div class="contact-card"><i class="fas fa-map-marker-alt"></i><h3>Address</h3><p>Zamora Street, Purok 1 Gogon Centro<br>Virac, Catanduanes 4800</p></div><div class="contact-card"><i class="fas fa-phone-alt"></i><h3>Phone</h3><p>0947-977-6401<br>Maria C Gray</p></div><div class="contact-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>info@revivalfireph.com<br>prayer@revivalfireph.com</p></div></div><form id="contactForm"><input type="text" placeholder="Your Name" required><input type="email" placeholder="Your Email" required><textarea rows="6" placeholder="Prayer Request or Message" required></textarea><button type="submit">Send Message</button></form><div style="text-align:center;margin-top:40px;"><a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Visit our Facebook Page</a></div></div></section>
+
+<footer><h3><span class="revival">REVIVAL</span> <span class="fire">FIRE</span> <span class="ph">PHILIPPINES</span></h3><p>"Reviving Hearts. Transforming Lives. Advancing God's Kingdom."</p><br><p>📍 Zamora Street, Purok 1 Gogon Centro, Virac, Catanduanes 4800</p><p>📞 0947-977-6401 | ✉️ info@revivalfireph.com</p><p>© 2026 Revival Fire Philippines. All Rights Reserved.</p></footer>
+
+<script>
+// ============================================
+// MAIN HERO SLIDESHOWS (revival1-15.jpg)
+// ============================================
+const slideshow1Images = ["revival1.jpg","revival2.jpg","revival3.jpg","revival4.jpg","revival5.jpg"];
+const slideshow2Images = ["revival6.jpg","revival7.jpg","revival8.jpg","revival9.jpg","revival10.jpg"];
+const slideshow3Images = ["revival11.jpg","revival12.jpg","revival13.jpg","revival14.jpg","revival15.jpg"];
+
+function createSlideshow(containerId, images, intervalTime = 5000) {
+    const container = document.getElementById(containerId);
+    if (!container) return;
+    container.innerHTML = '';
+    let currentIndex = 0;
+    images.forEach((img, idx) => {
+        const slide = document.createElement('div');
+        slide.classList.add('slide-bg');
+        if (idx === 0) slide.classList.add('active-slide');
+        slide.style.backgroundImage = `url('${img}')`;
+        slide.style.backgroundSize = 'cover';
+        slide.style.backgroundPosition = 'center';
+        container.appendChild(slide);
+    });
+    function nextSlide() {
+        const slides = container.querySelectorAll('.slide-bg');
+        slides[currentIndex].classList.remove('active-slide');
+        currentIndex = (currentIndex + 1) % images.length;
+        slides[currentIndex].classList.add('active-slide');
+    }
+    setInterval(nextSlide, intervalTime);
+}
+
+createSlideshow('slideshow1', slideshow1Images, 5000);
+createSlideshow('slideshow2', slideshow2Images, 5000);
+createSlideshow('slideshow3', slideshow3Images, 5000);
+
+// ============================================
+// ABOUT PAGE SMALL SLIDESHOW
+// ============================================
+const aboutImages = ["revival1.jpg","revival2.jpg","revival3.jpg","revival4.jpg","revival5.jpg"];
+let aboutCurrent = 0;
+const aboutSlides = document.querySelectorAll('.about-slide');
+const aboutDotsContainer = document.querySelector('.about-dots');
+
+if (aboutSlides.length > 0 && aboutDotsContainer) {
+    // Create dots
+    aboutImages.forEach((_, idx) => {
+        const dot = document.createElement('span');
+        dot.classList.add('about-dot');
+        if (idx === 0) dot.classList.add('active-about-dot');
+        dot.addEventListener('click', () => {
+            aboutSlides[aboutCurrent].classList.remove('active-about');
+            aboutCurrent = idx;
+            aboutSlides[aboutCurrent].classList.add('active-about');
+            document.querySelectorAll('.about-dot').forEach((d, i) => {
+                if (i === aboutCurrent) d.classList.add('active-about-dot');
+                else d.classList.remove('active-about-dot');
+            });
+        });
+        aboutDotsContainer.appendChild(dot);
+    });
+    
+    // Auto slide for about section
+    setInterval(() => {
+        aboutSlides[aboutCurrent].classList.remove('active-about');
+        aboutCurrent = (aboutCurrent + 1) % aboutImages.length;
+        aboutSlides[aboutCurrent].classList.add('active-about');
+        document.querySelectorAll('.about-dot').forEach((dot, i) => {
+            if (i === aboutCurrent) dot.classList.add('active-about-dot');
+            else dot.classList.remove('active-about-dot');
+        });
+    }, 4000);
+}
+
+// ============================================
+// OTHER FUNCTIONALITY
+// ============================================
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => { if (entry.isIntersecting) entry.target.classList.add('visible'); });
+}, { threshold: 0.3 });
+document.querySelectorAll('.hero-content').forEach(el => observer.observe(el));
+
+window.addEventListener('scroll', () => {
+    const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    document.getElementById('progressBar').style.width = (winScroll / height) * 100 + '%';
+    document.getElementById('header').classList.toggle('scrolled', winScroll > 50);
+    document.getElementById('scrollTopBtn').classList.toggle('show', winScroll > 300);
+    const scrollIndicator = document.getElementById('scrollDownBtn');
+    if (scrollIndicator && winScroll + window.innerHeight >= document.body.scrollHeight - 100) {
+        scrollIndicator.classList.add('hide');
+    } else if (scrollIndicator) {
+        scrollIndicator.classList.remove('hide');
+    }
+});
+
+document.getElementById('scrollTopBtn').addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+function scrollToNextSection() {
+    const sections = ['home', 'hero2', 'hero3', 'about', 'events', 'sermons', 'gallery', 'give', 'contact'];
+    let currentIdx = 0;
+    for (let i = 0; i < sections.length; i++) {
+        const section = document.getElementById(sections[i]);
+        if (section) {
+            const rect = section.getBoundingClientRect();
+            if (rect.top <= 150 && rect.bottom >= 100) { currentIdx = i; break; }
+        }
+    }
+    const nextIdx = currentIdx + 1;
+    if (nextIdx < sections.length) {
+        document.getElementById(sections[nextIdx]).scrollIntoView({ behavior: 'smooth', block: 'start' });
+    }
+}
+document.getElementById('scrollDownBtn').addEventListener('click', scrollToNextSection);
+
+document.getElementById('contactForm')?.addEventListener('submit', function(e) {
+    e.preventDefault();
+    alert('Thank you for your message! We will pray for you.');
+    this.reset();
+});
+document.getElementById('giveOnlineBtn')?.addEventListener('click', function(e) {
+    e.preventDefault();
+    alert('Thank you for your generosity! God bless you abundantly.');
+});
+document.querySelectorAll('.amount-btn').forEach(btn => {
+    btn.addEventListener('click', function() {
+        document.querySelectorAll('.amount-btn').forEach(b => b.classList.remove('active'));
+        this.classList.add('active');
+    });
+});
+document.querySelectorAll('nav a, .floating-donate a, .btn').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+        const href = this.getAttribute('href');
+        if (href && href.startsWith('#')) {
+            e.preventDefault();
+            const target = document.getElementById(href.substring(1));
+            if (target) target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+        }
+    });
+});
+if(document.querySelector('.amount-btn')) document.querySelector('.amount-btn').classList.add('active');
+</script>
+</body>
+</html>
