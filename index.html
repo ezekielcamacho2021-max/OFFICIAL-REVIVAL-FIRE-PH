@@ -2,8 +2,13 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 <title>Revival Fire Philippines | Complete Slideshows</title>
+
+<!-- Favicon -->
+<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
+<link rel="icon" type="image/x-icon" href="favicon.ico">
+<link rel="apple-touch-icon" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -425,10 +430,10 @@ nav a:hover{
     transform: translateY(-5px);
 }
 
-/* Floating Donate Button */
+/* Floating Donate Button - FIXED FOR MOBILE */
 .floating-donate {
     position: fixed;
-    bottom: 30px;
+    bottom: 100px;
     right: 30px;
     z-index: 999;
 }
@@ -437,15 +442,16 @@ nav a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 10px;
+    gap: 8px;
     background: #ff69b4;
     color: white;
     text-decoration: none;
-    padding: 15px 25px;
+    padding: 12px 20px;
     border-radius: 50px;
     font-weight: bold;
     box-shadow: 0 4px 20px rgba(255, 105, 180, 0.5);
     transition: all 0.3s;
+    font-size: 14px;
 }
 
 .floating-donate a:hover {
@@ -454,7 +460,7 @@ nav a:hover{
 }
 
 .floating-donate a i {
-    font-size: 20px;
+    font-size: 16px;
     animation: heartBeat 0.8s ease-in-out infinite;
 }
 
@@ -910,6 +916,9 @@ footer h3 span.ph {
     color: transparent;
 }
 
+/* ============================================ */
+/* MOBILE RESPONSIVE FIXES */
+/* ============================================ */
 @media(max-width:768px){
     .hero-content h1 { font-size: 40px; }
     .hero-content h1 .main-title { font-size: 35px; }
@@ -923,6 +932,145 @@ footer h3 span.ph {
     .scroll-down-indicator { left: 20px; bottom: 20px; padding: 8px 16px; }
     .give-title { font-size: 32px; }
     .give-section-enhanced { padding: 40px 20px; }
+    
+    /* FIX: Give button positioning on mobile */
+    .floating-donate {
+        bottom: 90px;
+        right: 20px;
+    }
+    .floating-donate a {
+        padding: 10px 16px;
+        font-size: 12px;
+    }
+    .floating-donate a span {
+        display: inline;
+    }
+    
+    /* FIX: Scroll to top button on mobile */
+    .scroll-top {
+        bottom: 90px;
+        right: 20px;
+        width: 40px;
+        height: 40px;
+        font-size: 16px;
+    }
+    
+    /* FIX: Gallery images - better fit for portrait mode */
+    .gallery-item img {
+        height: 200px;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    /* FIX: Hero slideshow images for mobile - better cropping */
+    .slide-bg {
+        background-size: cover;
+        background-position: center 30%;
+    }
+    
+    /* FIX: About section slideshow */
+    .about-slide {
+        height: 220px;
+        object-fit: cover;
+        object-position: center;
+    }
+    
+    /* FIX: YouTube thumbnails on mobile */
+    .video-thumbnail {
+        object-fit: cover;
+    }
+    
+    /* FIX: Mission vision padding */
+    .mission-vision {
+        padding: 25px 20px;
+    }
+    
+    .mv-box h3 {
+        font-size: 22px;
+    }
+    
+    .mv-box ul li {
+        font-size: 14px;
+        margin-bottom: 8px;
+    }
+    
+    /* Fix cards on mobile */
+    .cards {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Fix give options on mobile */
+    .give-options-enhanced {
+        grid-template-columns: 1fr;
+    }
+    
+    /* Fix contact info on mobile */
+    .contact-info {
+        grid-template-columns: 1fr;
+    }
+}
+
+/* Small phones (under 480px) */
+@media(max-width:480px) {
+    .hero-content h1 { font-size: 32px; }
+    .hero-content h1 .main-title { font-size: 28px; }
+    .hero-content h1 .welcome-text { font-size: 18px; }
+    .btn { padding: 10px 20px; font-size: 12px; }
+    .facebook-link { padding: 8px 18px; font-size: 12px; }
+    .section-title { font-size: 26px; }
+    
+    .gallery-item img {
+        height: 180px;
+    }
+    
+    .give-card-enhanced {
+        padding: 25px 15px;
+    }
+    
+    .give-title {
+        font-size: 28px;
+    }
+    
+    .contact-card {
+        padding: 20px;
+    }
+    
+    .floating-donate {
+        bottom: 80px;
+        right: 15px;
+    }
+    .floating-donate a {
+        padding: 8px 14px;
+    }
+    
+    .scroll-top {
+        bottom: 80px;
+        right: 15px;
+    }
+}
+
+/* Landscape mode fix for mobile */
+@media(max-width: 768px) and (orientation: landscape) {
+    .fullscreen-section {
+        min-height: auto;
+        padding: 60px 20px;
+    }
+    
+    .hero-content h1 {
+        font-size: 32px;
+    }
+    
+    .hero-content h1 .main-title {
+        font-size: 28px;
+    }
+    
+    .gallery-item img {
+        height: 160px;
+    }
+    
+    .about-slide {
+        height: 180px;
+    }
 }
 </style>
 </head>
@@ -951,9 +1099,9 @@ footer h3 span.ph {
     </div>
 </header>
 
-<!-- Floating Donate Button -->
+<!-- Floating Donate Button - FIXED POSITION -->
 <div class="floating-donate">
-    <a href="#give"><i class="fas fa-heart"></i><span>Give Now</span></a>
+    <a href="#give"><i class="fas fa-heart"></i><span>Give</span></a>
 </div>
 
 <!-- Scroll to Top Button -->
@@ -972,7 +1120,7 @@ footer h3 span.ph {
         <h1><span class="welcome-text">WELCOME TO</span><span class="main-title"><span class="word-revival">REVIVAL</span> <span class="word-fire">FIRE</span> <span class="word-ph">PH</span></span></h1>
         <p>God has released revival to the world and we are a community of believers who are passionate to see Jesus have His way; coming in power, moving in signs, wonders & miracles.</p>
         <div style="display: flex; gap: 20px; justify-content: flex-start; flex-wrap: wrap;">
-            <a href="#about" class="btn">Join Us This Sunday</a>
+            <a href="#about" class="btn">Join Us</a>
             <a href="https://www.facebook.com/REVIVALFIREPH" class="btn btn-outline" target="_blank">Watch Live</a>
         </div>
         <div style="margin-top: 30px;"><a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Follow us on Facebook</a></div>
@@ -1038,10 +1186,10 @@ footer h3 span.ph {
 
 <!-- SERMONS SECTION -->
 <section id="sermons"><div class="container"><h2 class="section-title">Latest <span class="fire">Sermons</span></h2><div class="video-grid">
-<div class="video-card"><a href="https://www.youtube.com/watch?v=AJ_bNRIY994" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/AJ_bNRIY994/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Overcoming the New Devils</h3><a href="https://www.youtube.com/watch?v=AJ_bNRIY994" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
-<div class="video-card"><a href="https://www.youtube.com/watch?v=yf_xZy8rP_0" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/yf_xZy8rP_0/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Impartation Session</h3><a href="https://www.youtube.com/watch?v=yf_xZy8rP_0" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
-<div class="video-card"><a href="https://www.youtube.com/watch?v=BxeYB570Y4M" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/BxeYB570Y4M/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Find Yourself / Jitafute</h3><a href="https://www.youtube.com/watch?v=BxeYB570Y4M" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
-<div class="video-card"><a href="https://www.youtube.com/watch?v=C3FN9JMPx1c" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/C3FN9JMPx1c/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Strong Faith Against Storms</h3><a href="https://www.youtube.com/watch?v=C3FN9JMPx1c" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=AJ_bNRIY994" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/AJ_bNRIY994/maxresdefault.jpg" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/AJ_bNRIY994/hqdefault.jpg'"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Overcoming the New Devils</h3><a href="https://www.youtube.com/watch?v=AJ_bNRIY994" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=yf_xZy8rP_0" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/yf_xZy8rP_0/maxresdefault.jpg" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/yf_xZy8rP_0/hqdefault.jpg'"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Impartation Session</h3><a href="https://www.youtube.com/watch?v=yf_xZy8rP_0" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=BxeYB570Y4M" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/BxeYB570Y4M/maxresdefault.jpg" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/BxeYB570Y4M/hqdefault.jpg'"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Find Yourself / Jitafute</h3><a href="https://www.youtube.com/watch?v=BxeYB570Y4M" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=C3FN9JMPx1c" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/C3FN9JMPx1c/maxresdefault.jpg" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/C3FN9JMPx1c/hqdefault.jpg'"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Strong Faith Against Storms</h3><a href="https://www.youtube.com/watch?v=C3FN9JMPx1c" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
 </div></div></section>
 
 <!-- GALLERY SECTION - EXPANDED WITH ALL 15 IMAGES -->
@@ -1076,6 +1224,49 @@ footer h3 span.ph {
 <footer><h3><span class="revival">REVIVAL</span> <span class="fire">FIRE</span> <span class="ph">PHILIPPINES</span></h3><p>"Reviving Hearts. Transforming Lives. Advancing God's Kingdom."</p><br><p>📍 Zamora Street, Purok 1 Gogon Centro, Virac, Catanduanes 4800</p><p>📞 0947-977-6401 | ✉️ info@revivalfireph.com</p><p>© 2026 Revival Fire Philippines. All Rights Reserved.</p></footer>
 
 <script>
+// ============================================
+// WELCOME AUDIO MESSAGE (Text-to-Speech)
+// ============================================
+let isAudioPlaying = false;
+let speechSynthesis = window.speechSynthesis;
+let currentUtterance = null;
+
+function playWelcomeMessage() {
+    if (speechSynthesis.speaking) {
+        speechSynthesis.cancel();
+    }
+    
+    const welcomeText = "Welcome to Revival Fire Philippines. We are glad to have you here. May God's presence and fire fill your heart today. Feel free to explore our website and join us in spreading revival across the Philippines and the nations. God bless you!";
+    
+    currentUtterance = new SpeechSynthesisUtterance(welcomeText);
+    currentUtterance.lang = 'en-US';
+    currentUtterance.rate = 0.9;
+    currentUtterance.pitch = 1.1;
+    currentUtterance.volume = 1;
+    
+    currentUtterance.onstart = function() {
+        isAudioPlaying = true;
+    };
+    
+    currentUtterance.onend = function() {
+        isAudioPlaying = false;
+    };
+    
+    currentUtterance.onerror = function() {
+        isAudioPlaying = false;
+    };
+    
+    speechSynthesis.speak(currentUtterance);
+}
+
+// Auto-play welcome message when page loads (with user interaction requirement for some browsers)
+window.addEventListener('load', function() {
+    setTimeout(() => {
+        // Some browsers require user interaction first
+        playWelcomeMessage();
+    }, 1000);
+});
+
 // ============================================
 // MAIN HERO SLIDESHOWS (revival1-15.jpg)
 // ============================================
@@ -1119,7 +1310,6 @@ const aboutSlides = document.querySelectorAll('.about-slide');
 const aboutDotsContainer = document.querySelector('.about-dots');
 
 if (aboutSlides.length > 0 && aboutDotsContainer) {
-    // Create dots
     aboutImages.forEach((_, idx) => {
         const dot = document.createElement('span');
         dot.classList.add('about-dot');
@@ -1136,7 +1326,6 @@ if (aboutSlides.length > 0 && aboutDotsContainer) {
         aboutDotsContainer.appendChild(dot);
     });
     
-    // Auto slide for about section
     setInterval(() => {
         aboutSlides[aboutCurrent].classList.remove('active-about');
         aboutCurrent = (aboutCurrent + 1) % aboutImages.length;
