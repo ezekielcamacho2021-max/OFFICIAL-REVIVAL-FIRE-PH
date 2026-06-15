@@ -2,13 +2,8 @@
 <html lang="en">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Revival Fire Philippines | Complete Slideshows</title>
-
-<!-- Favicon -->
-<link rel="icon" type="image/png" sizes="32x32" href="favicon.png">
-<link rel="icon" type="image/x-icon" href="favicon.ico">
-<link rel="apple-touch-icon" href="favicon.png">
 
 <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;600;700;800;900&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
@@ -42,6 +37,7 @@ body{
     --ph-blue: #0038a8;
     --ph-red: #ce1126;
     --ph-yellow: #fcd116;
+    --golden-fire: #FFD700;
 }
 
 header{
@@ -249,6 +245,42 @@ nav a:hover{
     margin-top: 10px;
 }
 
+/* REVIVAL FIRE PHILIPPINES - GOLDEN YELLOW FIRE STYLES (Homepage Only) */
+.hero-content h1 .main-title .word-revival-golden {
+    display: inline-block;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFA500, 0 0 20px #FF8C00;
+    animation: goldenGlow 2s ease-in-out infinite;
+}
+
+.hero-content h1 .main-title .word-fire-golden {
+    display: inline-block;
+    color: #FFD700;
+    text-shadow: 0 0 10px #FFA500, 0 0 20px #FF4500;
+    animation: fireFlickerGolden 0.8s ease-in-out infinite alternate;
+}
+
+.hero-content h1 .main-title .word-ph-golden {
+    display: inline-block;
+    background: linear-gradient(135deg, #FFD700, #FFA500, #FF8C00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    text-shadow: 0 0 15px #FFA500;
+}
+
+@keyframes goldenGlow {
+    0%, 100% { text-shadow: 0 0 5px #FFD700, 0 0 10px #FFA500; }
+    50% { text-shadow: 0 0 20px #FFD700, 0 0 30px #FF8C00; }
+}
+
+@keyframes fireFlickerGolden {
+    0% { text-shadow: 0 0 5px #FFD700, 0 0 8px #FFA500; color: #FFD700; }
+    50% { text-shadow: 0 0 15px #FFD700, 0 0 25px #FF4500; color: #FFEA00; }
+    100% { text-shadow: 0 0 8px #FFD700, 0 0 15px #FF8C00; color: #FFD700; }
+}
+
+/* Original styles for other hero sections (keep unchanged) */
 .hero-content h1 .word-revival {
     display: inline-block;
     color: var(--revival-blue);
@@ -324,45 +356,6 @@ nav a:hover{
 .btn-outline:hover{
     background:var(--revival-blue);
     color:white;
-}
-
-.youtube-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #ff0000;
-    color: white;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: all 0.3s;
-    margin-top: 15px;
-}
-
-.youtube-link:hover {
-    background: #cc0000;
-    transform: scale(1.05);
-}
-
-.x-link {
-    display: inline-flex;
-    align-items: center;
-    gap: 10px;
-    background: #000000;
-    color: white;
-    text-decoration: none;
-    padding: 12px 25px;
-    border-radius: 50px;
-    font-weight: bold;
-    transition: all 0.3s;
-    margin-top: 15px;
-    border: 1px solid #333;
-}
-
-.x-link:hover {
-    background: #1DA1F2;
-    transform: scale(1.05);
 }
 
 .facebook-link {
@@ -469,10 +462,10 @@ nav a:hover{
     transform: translateY(-5px);
 }
 
-/* Floating Donate Button - FIXED FOR MOBILE */
+/* Floating Donate Button */
 .floating-donate {
     position: fixed;
-    bottom: 100px;
+    bottom: 30px;
     right: 30px;
     z-index: 999;
 }
@@ -481,16 +474,15 @@ nav a:hover{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 8px;
+    gap: 10px;
     background: #ff69b4;
     color: white;
     text-decoration: none;
-    padding: 12px 20px;
+    padding: 15px 25px;
     border-radius: 50px;
     font-weight: bold;
     box-shadow: 0 4px 20px rgba(255, 105, 180, 0.5);
     transition: all 0.3s;
-    font-size: 14px;
 }
 
 .floating-donate a:hover {
@@ -499,7 +491,7 @@ nav a:hover{
 }
 
 .floating-donate a i {
-    font-size: 16px;
+    font-size: 20px;
     animation: heartBeat 0.8s ease-in-out infinite;
 }
 
@@ -642,7 +634,7 @@ section{
 
 .video-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     margin-top: 20px;
 }
@@ -955,30 +947,6 @@ footer h3 span.ph {
     color: transparent;
 }
 
-.social-links-footer {
-    display: flex;
-    justify-content: center;
-    gap: 25px;
-    margin: 20px 0;
-}
-
-.social-links-footer a {
-    color: white;
-    font-size: 28px;
-    transition: all 0.3s;
-}
-
-.social-links-footer a:hover {
-    transform: scale(1.2);
-}
-
-.social-links-footer a.youtube:hover { color: #ff0000; }
-.social-links-footer a.x-twitter:hover { color: #1DA1F2; }
-.social-links-footer a.facebook:hover { color: #1877f2; }
-
-/* ============================================ */
-/* MOBILE RESPONSIVE FIXES */
-/* ============================================ */
 @media(max-width:768px){
     .hero-content h1 { font-size: 40px; }
     .hero-content h1 .main-title { font-size: 35px; }
@@ -992,130 +960,6 @@ footer h3 span.ph {
     .scroll-down-indicator { left: 20px; bottom: 20px; padding: 8px 16px; }
     .give-title { font-size: 32px; }
     .give-section-enhanced { padding: 40px 20px; }
-    
-    .floating-donate {
-        bottom: 90px;
-        right: 20px;
-    }
-    .floating-donate a {
-        padding: 10px 16px;
-        font-size: 12px;
-    }
-    
-    .scroll-top {
-        bottom: 90px;
-        right: 20px;
-        width: 40px;
-        height: 40px;
-        font-size: 16px;
-    }
-    
-    .gallery-item img {
-        height: 200px;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    .slide-bg {
-        background-size: cover;
-        background-position: center 30%;
-    }
-    
-    .about-slide {
-        height: 220px;
-        object-fit: cover;
-        object-position: center;
-    }
-    
-    .video-thumbnail {
-        object-fit: cover;
-    }
-    
-    .mission-vision {
-        padding: 25px 20px;
-    }
-    
-    .mv-box h3 {
-        font-size: 22px;
-    }
-    
-    .mv-box ul li {
-        font-size: 14px;
-        margin-bottom: 8px;
-    }
-    
-    .cards {
-        grid-template-columns: 1fr;
-    }
-    
-    .give-options-enhanced {
-        grid-template-columns: 1fr;
-    }
-    
-    .contact-info {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media(max-width:480px) {
-    .hero-content h1 { font-size: 32px; }
-    .hero-content h1 .main-title { font-size: 28px; }
-    .hero-content h1 .welcome-text { font-size: 18px; }
-    .btn { padding: 10px 20px; font-size: 12px; }
-    .facebook-link, .youtube-link, .x-link { padding: 8px 18px; font-size: 12px; }
-    .section-title { font-size: 26px; }
-    
-    .gallery-item img {
-        height: 180px;
-    }
-    
-    .give-card-enhanced {
-        padding: 25px 15px;
-    }
-    
-    .give-title {
-        font-size: 28px;
-    }
-    
-    .contact-card {
-        padding: 20px;
-    }
-    
-    .floating-donate {
-        bottom: 80px;
-        right: 15px;
-    }
-    .floating-donate a {
-        padding: 8px 14px;
-    }
-    
-    .scroll-top {
-        bottom: 80px;
-        right: 15px;
-    }
-}
-
-@media(max-width: 768px) and (orientation: landscape) {
-    .fullscreen-section {
-        min-height: auto;
-        padding: 60px 20px;
-    }
-    
-    .hero-content h1 {
-        font-size: 32px;
-    }
-    
-    .hero-content h1 .main-title {
-        font-size: 28px;
-    }
-    
-    .gallery-item img {
-        height: 160px;
-    }
-    
-    .about-slide {
-        height: 180px;
-    }
 }
 </style>
 </head>
@@ -1146,67 +990,62 @@ footer h3 span.ph {
 
 <!-- Floating Donate Button -->
 <div class="floating-donate">
-    <a href="#give"><i class="fas fa-heart"></i><span>Give</span></a>
+    <a href="#give"><i class="fas fa-heart"></i><span>Give Now</span></a>
 </div>
 
 <!-- Scroll to Top Button -->
 <button class="scroll-top" id="scrollTopBtn"><i class="fas fa-arrow-up"></i></button>
 
-<!-- Scroll Down Button -->
+<!-- Scroll Down Button - LEFT SIDE BOTTOM -->
 <div class="scroll-down-indicator" id="scrollDownBtn">
     <span>SCROLL</span>
     <i class="fas fa-chevron-down"></i>
 </div>
 
-<!-- HERO SECTION 1 -->
+<!-- HERO SECTION 1 - HOME PAGE with GOLDEN YELLOW "REVIVAL FIRE PHILIPPINES" -->
 <section id="home" class="fullscreen-section">
     <div class="slideshow-bg" id="slideshow1"></div>
     <div class="hero-content">
-        <h1><span class="welcome-text">WELCOME TO</span><span class="main-title"><span class="word-revival">REVIVAL</span> <span class="word-fire">FIRE</span> <span class="word-ph">PH</span></span></h1>
+        <h1>
+            <span class="welcome-text">WELCOME TO</span>
+            <span class="main-title">
+                <span class="word-revival-golden">REVIVAL</span> 
+                <span class="word-fire-golden">FIRE</span> 
+                <span class="word-ph-golden">PHILIPPINES</span>
+            </span>
+        </h1>
         <p>God has released revival to the world and we are a community of believers who are passionate to see Jesus have His way; coming in power, moving in signs, wonders & miracles.</p>
         <div style="display: flex; gap: 20px; justify-content: flex-start; flex-wrap: wrap;">
-            <a href="#about" class="btn">Join Us</a>
-            <a href="https://www.youtube.com/@REVIVALFIREPH" class="btn btn-outline" target="_blank">Watch Live</a>
+            <a href="#about" class="btn">Join Us This Sunday</a>
+            <a href="https://www.facebook.com/REVIVALFIREPH" class="btn btn-outline" target="_blank">Watch Live</a>
         </div>
-        <div style="display: flex; gap: 15px; margin-top: 30px; flex-wrap: wrap;">
-            <a href="https://www.youtube.com/@REVIVALFIREPH" target="_blank" class="youtube-link"><i class="fab fa-youtube"></i> Subscribe on YouTube</a>
-            <a href="https://x.com/REVIVALFIREPH" target="_blank" class="x-link"><i class="fab fa-twitter"></i> Follow on X</a>
-            <a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Follow on Facebook</a>
-        </div>
+        <div style="margin-top: 30px;"><a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Follow us on Facebook</a></div>
     </div>
 </section>
 
-<!-- HERO SECTION 2 -->
+<!-- HERO SECTION 2 (unchanged) -->
 <section id="hero2" class="fullscreen-section">
     <div class="slideshow-bg" id="slideshow2"></div>
     <div class="hero-content">
         <h1><span class="welcome-text">EXPERIENCE THE</span><span class="main-title">POWER OF REVIVAL</span></h1>
         <p>Join us as we seek God's presence and witness miracles, healings, and transformed lives. Be part of a community that is hungry for more of God's glory and fire.</p>
         <a href="#events" class="btn">Join Our Next Event</a>
-        <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; justify-content: center;">
-            <a href="https://www.youtube.com/@REVIVALFIREPH" target="_blank" class="youtube-link"><i class="fab fa-youtube"></i> YouTube Channel</a>
-            <a href="https://x.com/REVIVALFIREPH" target="_blank" class="x-link"><i class="fab fa-twitter"></i> X (Twitter)</a>
-            <a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Facebook Page</a>
-        </div>
+        <div style="margin-top: 20px;"><a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Visit our Facebook Page</a></div>
     </div>
 </section>
 
-<!-- HERO SECTION 3 -->
+<!-- HERO SECTION 3 (unchanged) -->
 <section id="hero3" class="fullscreen-section">
     <div class="slideshow-bg" id="slideshow3"></div>
     <div class="hero-content">
         <h1><span class="welcome-text">BE PART OF THE</span><span class="main-title">MOVEMENT OF GOD</span></h1>
         <p>Together we are advancing God's Kingdom. Your prayers, support, and presence make a difference. Join us in bringing revival to the Philippines and the nations.</p>
         <a href="#give" class="btn">Support the Mission →</a>
-        <div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap; justify-content: center;">
-            <a href="https://www.youtube.com/@REVIVALFIREPH" target="_blank" class="youtube-link"><i class="fab fa-youtube"></i> Subscribe</a>
-            <a href="https://x.com/REVIVALFIREPH" target="_blank" class="x-link"><i class="fab fa-twitter"></i> Follow on X</a>
-            <a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Connect</a>
-        </div>
+        <div style="margin-top: 20px;"><a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Connect on Facebook</a></div>
     </div>
 </section>
 
-<!-- ABOUT SECTION -->
+<!-- ABOUT SECTION with SMALL SLIDESHOW -->
 <section id="about">
 <div class="container">
 <h2 class="section-title">About <span class="revival">REVIVAL</span> <span class="fire">FIRE</span> <span class="ph">PH</span></h2>
@@ -1224,11 +1063,7 @@ footer h3 span.ph {
 <p>Revival Fire Philippines is a Christ-centered ministry committed to evangelism, discipleship, healing, revival, and community transformation.</p>
 <br>
 <p>Our vision is to see lives transformed through the power of Jesus Christ and to equip believers to carry revival wherever they go.</p>
-<div style="display: flex; gap: 15px; margin-top: 20px; flex-wrap: wrap;">
-    <a href="https://www.youtube.com/@REVIVALFIREPH" target="_blank" class="youtube-link"><i class="fab fa-youtube"></i> Subscribe on YouTube</a>
-    <a href="https://x.com/REVIVALFIREPH" target="_blank" class="x-link"><i class="fab fa-twitter"></i> Follow on X</a>
-    <a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Follow on Facebook</a>
-</div>
+<a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link" style="margin-top: 20px; display: inline-flex;"><i class="fab fa-facebook-f"></i> Follow us on Facebook</a>
 </div>
 </div>
 <div class="mission-vision">
@@ -1245,14 +1080,15 @@ footer h3 span.ph {
 <div class="card"><img src="sunday-service.jpg" alt="Sunday" onerror="this.src='https://images.unsplash.com/photo-1438032945733-7f60b2d6cc8b?w=600'"><div class="card-content"><h3>Sunday Service</h3><p>📍 Zamora Street, Gogon Centro, Virac, Catanduanes | 2:15 PM</p></div></div>
 </div></div></section>
 
-<!-- SERMONS SECTION - UPDATED WITH YOUR 3 YOUTUBE LINKS -->
+<!-- SERMONS SECTION -->
 <section id="sermons"><div class="container"><h2 class="section-title">Latest <span class="fire">Sermons</span></h2><div class="video-grid">
-<div class="video-card"><a href="https://www.youtube.com/watch?v=RrS7a_zuCf0" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/RrS7a_zuCf0/maxresdefault.jpg" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/RrS7a_zuCf0/hqdefault.jpg'"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>REVIVALFIREPH JUNE 7</h3><a href="https://www.youtube.com/watch?v=RrS7a_zuCf0" class="watch-btn"><i class="fab fa-youtube"></i> Watch on YouTube</a></div></div>
-<div class="video-card"><a href="https://www.youtube.com/watch?v=HoEapyf1aFk" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/HoEapyf1aFk/maxresdefault.jpg" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/HoEapyf1aFk/hqdefault.jpg'"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Revival Fire Philippines Day 2</h3><a href="https://www.youtube.com/watch?v=HoEapyf1aFk" class="watch-btn"><i class="fab fa-youtube"></i> Watch on YouTube</a></div></div>
-<div class="video-card"><a href="https://www.youtube.com/watch?v=gV38M7E1UdI" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/gV38M7E1UdI/maxresdefault.jpg" class="video-thumbnail" onerror="this.src='https://img.youtube.com/vi/gV38M7E1UdI/hqdefault.jpg'"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Revival Fire Philippines in CATANDUANES Day 1</h3><a href="https://www.youtube.com/watch?v=gV38M7E1UdI" class="watch-btn"><i class="fab fa-youtube"></i> Watch on YouTube</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=AJ_bNRIY994" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/AJ_bNRIY994/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Overcoming the New Devils</h3><a href="https://www.youtube.com/watch?v=AJ_bNRIY994" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=yf_xZy8rP_0" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/yf_xZy8rP_0/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Impartation Session</h3><a href="https://www.youtube.com/watch?v=yf_xZy8rP_0" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=BxeYB570Y4M" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/BxeYB570Y4M/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Find Yourself / Jitafute</h3><a href="https://www.youtube.com/watch?v=BxeYB570Y4M" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
+<div class="video-card"><a href="https://www.youtube.com/watch?v=C3FN9JMPx1c" target="_blank"><div class="video-wrapper"><img src="https://img.youtube.com/vi/C3FN9JMPx1c/maxresdefault.jpg" class="video-thumbnail"><div class="play-overlay"><i class="fab fa-youtube"></i></div></div></a><div class="video-info"><h3>Strong Faith Against Storms</h3><a href="https://www.youtube.com/watch?v=C3FN9JMPx1c" class="watch-btn"><i class="fab fa-youtube"></i> Watch</a></div></div>
 </div></div></section>
 
-<!-- GALLERY SECTION -->
+<!-- GALLERY SECTION - EXPANDED WITH ALL 15 IMAGES -->
 <section id="gallery"><div class="container"><h2 class="section-title">Media <span class="revival">Gallery</span></h2><div class="gallery">
 <div class="gallery-item"><img src="revival1.jpg"><div class="gallery-overlay"><p>Revival Fire Event 1</p></div></div>
 <div class="gallery-item"><img src="revival2.jpg"><div class="gallery-overlay"><p>Revival Fire Event 2</p></div></div>
@@ -1271,7 +1107,7 @@ footer h3 span.ph {
 <div class="gallery-item"><img src="revival15.jpg"><div class="gallery-overlay"><p>Revival Fire Event 15</p></div></div>
 </div></div></section>
 
-<!-- GIVE SECTION -->
+<!-- GIVE SECTION - FULL RESTORED -->
 <section id="give"><div class="container"><div class="give-section-enhanced"><h2 class="give-title">Support <span class="revival">REVIVAL</span> <span class="fire">FIRE</span> <span class="ph">PH</span></h2><p class="give-subtitle">Your generosity is making an eternal impact in the Philippines and beyond.</p>
 <div class="give-options-enhanced"><div class="give-card-enhanced"><i class="fas fa-credit-card"></i><h3>Online Giving</h3><p>Give securely online using your credit or debit card</p><div class="give-amount-buttons"><span class="amount-btn">₱500</span><span class="amount-btn">₱1,000</span><span class="amount-btn">₱2,500</span><span class="amount-btn">₱5,000</span><span class="amount-btn">Other</span></div><a href="#" class="btn" id="giveOnlineBtn">Give Now</a></div>
 <div class="give-card-enhanced"><div class="payment-logos"><div class="payment-logo gcash">GCash</div><div class="payment-logo paymaya">PayMaya</div><div class="payment-logo paypal">PayPal</div><div class="payment-logo venmo">Venmo</div></div><h3>Mobile & Digital Wallets</h3><p>Send via mobile number or email</p><div style="margin:15px 0;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;"><p style="font-weight:bold;">🇵🇭 GCash / PayMaya (Philippines)</p><div class="gcash-number">0947-977-6401</div><p style="font-size:12px;">Account: Maria C Gray</p></div><div style="margin:15px 0;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;"><p style="font-weight:bold;">🌎 PayPal (International)</p><p style="font-size:16px;color:var(--revival-blue);">paypal@revivalfireph.com</p><p style="font-size:12px;">Send to: Revival Fire Philippines</p></div><div style="margin:15px 0;padding:10px;background:rgba(255,255,255,0.05);border-radius:10px;"><p style="font-weight:bold;">🇺🇸 Venmo (US Only)</p><p style="font-size:16px;color:var(--revival-blue);">@RevivalFirePH</p></div></div>
@@ -1279,69 +1115,13 @@ footer h3 span.ph {
 <div class="give-impact"><div><div class="impact-number">500+</div><div class="impact-label">Lives Touched</div></div><div><div class="impact-number">50+</div><div class="impact-label">Families Supported</div></div><div><div class="impact-number">24/7</div><div class="impact-label">Prayer Coverage</div></div></div></div></div></section>
 
 <!-- CONTACT SECTION -->
-<section id="contact"><div class="container"><h2 class="section-title">Contact <span class="revival">Us</span></h2><div class="contact-info"><div class="contact-card"><i class="fas fa-map-marker-alt"></i><h3>Address</h3><p>Zamora Street, Purok 1 Gogon Centro<br>Virac, Catanduanes 4800</p></div><div class="contact-card"><i class="fas fa-phone-alt"></i><h3>Phone</h3><p>0947-977-6401<br>Maria C Gray</p></div><div class="contact-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>info@revivalfireph.com<br>prayer@revivalfireph.com</p></div></div><form id="contactForm"><input type="text" placeholder="Your Name" required><input type="email" placeholder="Your Email" required><textarea rows="6" placeholder="Prayer Request or Message" required></textarea><button type="submit">Send Message</button></form><div style="display: flex; gap: 15px; justify-content: center; margin-top: 40px; flex-wrap: wrap;">
-    <a href="https://www.youtube.com/@REVIVALFIREPH" target="_blank" class="youtube-link"><i class="fab fa-youtube"></i> YouTube Channel</a>
-    <a href="https://x.com/REVIVALFIREPH" target="_blank" class="x-link"><i class="fab fa-twitter"></i> X (Twitter)</a>
-    <a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Facebook Page</a>
-</div></div></section>
+<section id="contact"><div class="container"><h2 class="section-title">Contact <span class="revival">Us</span></h2><div class="contact-info"><div class="contact-card"><i class="fas fa-map-marker-alt"></i><h3>Address</h3><p>Zamora Street, Purok 1 Gogon Centro<br>Virac, Catanduanes 4800</p></div><div class="contact-card"><i class="fas fa-phone-alt"></i><h3>Phone</h3><p>0947-977-6401<br>Maria C Gray</p></div><div class="contact-card"><i class="fas fa-envelope"></i><h3>Email</h3><p>info@revivalfireph.com<br>prayer@revivalfireph.com</p></div></div><form id="contactForm"><input type="text" placeholder="Your Name" required><input type="email" placeholder="Your Email" required><textarea rows="6" placeholder="Prayer Request or Message" required></textarea><button type="submit">Send Message</button></form><div style="text-align:center;margin-top:40px;"><a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook-link"><i class="fab fa-facebook-f"></i> Visit our Facebook Page</a></div></div></section>
 
-<footer>
-    <h3><span class="revival">REVIVAL</span> <span class="fire">FIRE</span> <span class="ph">PHILIPPINES</span></h3>
-    <p>"Reviving Hearts. Transforming Lives. Advancing God's Kingdom."</p>
-    <div class="social-links-footer">
-        <a href="https://www.youtube.com/@REVIVALFIREPH" target="_blank" class="youtube"><i class="fab fa-youtube"></i></a>
-        <a href="https://x.com/REVIVALFIREPH" target="_blank" class="x-twitter"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.facebook.com/REVIVALFIREPH" target="_blank" class="facebook"><i class="fab fa-facebook-f"></i></a>
-    </div>
-    <p>📍 Zamora Street, Purok 1 Gogon Centro, Virac, Catanduanes 4800</p>
-    <p>📞 0947-977-6401 | ✉️ info@revivalfireph.com</p>
-    <p>© 2026 Revival Fire Philippines. All Rights Reserved.</p>
-</footer>
+<footer><h3><span class="revival">REVIVAL</span> <span class="fire">FIRE</span> <span class="ph">PHILIPPINES</span></h3><p>"Reviving Hearts. Transforming Lives. Advancing God's Kingdom."</p><br><p>📍 Zamora Street, Purok 1 Gogon Centro, Virac, Catanduanes 4800</p><p>📞 0947-977-6401 | ✉️ info@revivalfireph.com</p><p>© 2026 Revival Fire Philippines. All Rights Reserved.</p></footer>
 
 <script>
 // ============================================
-// WELCOME AUDIO MESSAGE (Text-to-Speech)
-// ============================================
-let isAudioPlaying = false;
-let speechSynthesis = window.speechSynthesis;
-let currentUtterance = null;
-
-function playWelcomeMessage() {
-    if (speechSynthesis.speaking) {
-        speechSynthesis.cancel();
-    }
-    
-    const welcomeText = "Welcome to Revival Fire Philippines. We are glad to have you here. May God's presence and fire fill your heart today. Feel free to explore our website and join us in spreading revival across the Philippines and the nations. God bless you!";
-    
-    currentUtterance = new SpeechSynthesisUtterance(welcomeText);
-    currentUtterance.lang = 'en-US';
-    currentUtterance.rate = 0.9;
-    currentUtterance.pitch = 1.1;
-    currentUtterance.volume = 1;
-    
-    currentUtterance.onstart = function() {
-        isAudioPlaying = true;
-    };
-    
-    currentUtterance.onend = function() {
-        isAudioPlaying = false;
-    };
-    
-    currentUtterance.onerror = function() {
-        isAudioPlaying = false;
-    };
-    
-    speechSynthesis.speak(currentUtterance);
-}
-
-window.addEventListener('load', function() {
-    setTimeout(() => {
-        playWelcomeMessage();
-    }, 1000);
-});
-
-// ============================================
-// MAIN HERO SLIDESHOWS
+// MAIN HERO SLIDESHOWS (revival1-15.jpg)
 // ============================================
 const slideshow1Images = ["revival1.jpg","revival2.jpg","revival3.jpg","revival4.jpg","revival5.jpg"];
 const slideshow2Images = ["revival6.jpg","revival7.jpg","revival8.jpg","revival9.jpg","revival10.jpg"];
@@ -1383,6 +1163,7 @@ const aboutSlides = document.querySelectorAll('.about-slide');
 const aboutDotsContainer = document.querySelector('.about-dots');
 
 if (aboutSlides.length > 0 && aboutDotsContainer) {
+    // Create dots
     aboutImages.forEach((_, idx) => {
         const dot = document.createElement('span');
         dot.classList.add('about-dot');
@@ -1399,6 +1180,7 @@ if (aboutSlides.length > 0 && aboutDotsContainer) {
         aboutDotsContainer.appendChild(dot);
     });
     
+    // Auto slide for about section
     setInterval(() => {
         aboutSlides[aboutCurrent].classList.remove('active-about');
         aboutCurrent = (aboutCurrent + 1) % aboutImages.length;
